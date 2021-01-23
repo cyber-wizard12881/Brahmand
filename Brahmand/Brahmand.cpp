@@ -8,7 +8,7 @@
 #include <chrono>
 #include <omp.h>
 
-#define NThreads 8
+#define NThreads 6
 
 void ExecuteSerialHanoi();
 void ExecuteParallelHanoi();

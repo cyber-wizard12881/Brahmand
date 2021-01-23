@@ -14,7 +14,7 @@ ParallelHanoi::ParallelHanoi()
 	this->A = new PHanoi();
 	this->B = new PHanoi();
 	this->C = new PHanoi();
-	this->moves = new concurrent_unordered_map<int, string>();
+	this->moves = new map<int, string>();
 }
 
 ParallelHanoi::~ParallelHanoi()
@@ -30,7 +30,7 @@ ParallelHanoi::~ParallelHanoi()
 	this->moves->clear();
 }
 
-void ParallelHanoi::move(int n, PHanoi* source, PHanoi* destination, PHanoi* auxillary, concurrent_unordered_map<int, string>* moves)
+void ParallelHanoi::move(int n, PHanoi* source, PHanoi* destination, PHanoi* auxillary, map<int, string>* moves)
 {
 
 	if (n > 0) {
@@ -38,9 +38,8 @@ void ParallelHanoi::move(int n, PHanoi* source, PHanoi* destination, PHanoi* aux
 #pragma omp section
 		move(n - 1, source, auxillary, destination, moves);
 
-	int srcDisc;
-	source->Discs->try_pop(srcDisc);
-	destination->Discs->push(srcDisc);
+	destination->Discs->push(source->Discs->front());
+	source->Discs->pop();
 
 	string action = "Move " + std::to_string(n) + " From " + source->Tower + " To " + destination->Tower + " .... \n";
 	moves->insert(make_pair(this->Turn, action));
@@ -67,8 +66,8 @@ ParallelHanoi::ParallelHanoi(int N)
 {
 	this->Turn = 0;
 	this->N = N;
-	this->A = new PHanoi(N, new concurrent_queue<int>(), "A");
-	this->B = new PHanoi(0, new concurrent_queue<int>(), "B");
-	this->C = new PHanoi(0, new concurrent_queue<int>(), "C");
-	this->moves = new concurrent_unordered_map<int, string>();
+	this->A = new PHanoi(N, new queue<int>(), "A");
+	this->B = new PHanoi(0, new queue<int>(), "B");
+	this->C = new PHanoi(0, new queue<int>(), "C");
+	this->moves = new map<int, string>();
 }

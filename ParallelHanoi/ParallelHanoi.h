@@ -21,12 +21,12 @@ public:
 	PHanoi* A;
 	PHanoi* B;
 	PHanoi* C;
-	concurrent_unordered_map<int, string>* moves;
+	map<int, string>* moves;
 	int Turn;
 	ParallelHanoi();
 	ParallelHanoi(int N);
 	~ParallelHanoi();
-	void move(int n, PHanoi* source, PHanoi* destination, PHanoi* auxillary, concurrent_unordered_map<int, string>* moves);
+	void move(int n, PHanoi* source, PHanoi* destination, PHanoi* auxillary, map<int, string>* moves);
 	void move();
 	void print();
 };
