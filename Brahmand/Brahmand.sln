@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brahmand", "Brahmand.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialHanoi", "..\SerialHanoi\SerialHanoi.vcxproj", "{1D6079D0-85A9-4339-BC86-1BFFB48B666D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParallelHanoi", "..\ParallelHanoi\ParallelHanoi.vcxproj", "{1467390D-E8FA-4C8D-9F11-E4730A35325B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{1D6079D0-85A9-4339-BC86-1BFFB48B666D}.Release|x64.Build.0 = Release|x64
 		{1D6079D0-85A9-4339-BC86-1BFFB48B666D}.Release|x86.ActiveCfg = Release|Win32
 		{1D6079D0-85A9-4339-BC86-1BFFB48B666D}.Release|x86.Build.0 = Release|Win32
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Debug|x64.ActiveCfg = Debug|x64
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Debug|x64.Build.0 = Debug|x64
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Debug|x86.ActiveCfg = Debug|Win32
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Debug|x86.Build.0 = Debug|Win32
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Release|x64.ActiveCfg = Release|x64
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Release|x64.Build.0 = Release|x64
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Release|x86.ActiveCfg = Release|Win32
+		{1467390D-E8FA-4C8D-9F11-E4730A35325B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
