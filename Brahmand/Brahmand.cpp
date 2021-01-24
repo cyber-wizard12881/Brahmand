@@ -54,6 +54,7 @@ void ExecuteParallelHanoi()
     std::chrono::steady_clock::time_point start;
     std::chrono::steady_clock::time_point end;
 
+    //set the number of threads for execution in OpenMP
     omp_set_num_threads(NThreads);
 
     start = std::chrono::steady_clock::now();
