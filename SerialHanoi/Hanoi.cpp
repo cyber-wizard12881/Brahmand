@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Hanoi.h"
 
+//Default Constructor --> Initialize Defaults
 Hanoi::Hanoi()
 {
 	this->N = 0;
@@ -8,6 +9,7 @@ Hanoi::Hanoi()
 	this->Tower = "";
 }
 
+//Destructor --> Clean up stuff at the end
 Hanoi::~Hanoi()
 {
 	this->N = 0;
@@ -16,6 +18,7 @@ Hanoi::~Hanoi()
 	this->Tower.clear();
 }
 
+//Invoked Constructor --> With Number of Disks, its Configuration & the Name of the Tower
 Hanoi::Hanoi(int N, queue<int>* Discs, string Tower)
 {
 	this->N = N;

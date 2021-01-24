@@ -8,11 +8,15 @@
 #include <chrono>
 #include <omp.h>
 
+//Number of Threads for Parallel Hanoi using OpenMP
 #define NThreads 6
 
+//fwd decl for Serial Hanoi Executor
 void ExecuteSerialHanoi();
+//fwd decl for Parallel Hanoi Executor
 void ExecuteParallelHanoi();
 
+//The main entry point for the application
 int main()
 {
     std::cout << "---------Entering Brahmand!!!----------\n";
@@ -22,6 +26,7 @@ int main()
     return getchar();
 }
 
+//invoke the serial version of the Towers of Hanoi Algorithm using recursion 
 void ExecuteSerialHanoi()
 {
     cout << "...... Starting the Serial Hanoi Program ......" << endl;
@@ -42,6 +47,7 @@ void ExecuteSerialHanoi()
     cout << "....... Ending the Serial Hanoi Program ......" << endl;
 }
 
+//invoke the parallel version of the Towers of Hanoi Algorithm using recursion with OpenMP
 void ExecuteParallelHanoi()
 {
     cout << "...... Starting the Parallel Hanoi Program ....." << endl;

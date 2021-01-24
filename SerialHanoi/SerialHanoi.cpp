@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Default Constructor --> Initialize defaults
 SerialHanoi::SerialHanoi()
 {
 	this->Turn = 0;
@@ -14,6 +15,7 @@ SerialHanoi::SerialHanoi()
 	this->moves = new map<int, string>();
 }
 
+//Destructor --> Clean up stuff at the end
 SerialHanoi::~SerialHanoi()
 {
 	this->Turn = 0;
@@ -27,11 +29,14 @@ SerialHanoi::~SerialHanoi()
 	this->moves->clear();
 }
 
+//Serial version of the recursive algorithm for the Towers of Hanoi Puzzle
 void SerialHanoi::move(int n, Hanoi* source, Hanoi* destination, Hanoi* auxillary, map<int, string>* moves)
 {
 	if (n > 0) {
+		//LHS of the Divide & Conquer Tree Branch
 		move(n - 1, source, auxillary, destination, moves);
 
+		//Move the Disk from Source -> Destination Tower
 		destination->Discs->push(source->Discs->front());
 		source->Discs->pop();
 
@@ -39,15 +44,18 @@ void SerialHanoi::move(int n, Hanoi* source, Hanoi* destination, Hanoi* auxillar
 		moves->insert(make_pair(this->Turn, action));
 		this->Turn++;
 
+		//RHS of the Divide & Conquer Tree Branch
 		move(n - 1, auxillary, destination, source, moves);
 	}
 }
 
+//Serial Invoker of the Recursive Algorithm mentioned above
 void SerialHanoi::move()
 {
 	this->move(this->N, this->A, this->C, this->B, this->moves);
 }
 
+//Print out the results of execution of the Serial Towers of Hanoi to the console (screen)
 void SerialHanoi::print()
 {
 	for (int turn = 0; turn < this->moves->size(); turn++) {
@@ -55,6 +63,7 @@ void SerialHanoi::print()
 	}
 }
 
+//Invoked Constructor --> initialize the Hanoi Towers with the Number of Disks and their initial configuration 
 SerialHanoi::SerialHanoi(int N)
 {
 	this->Turn = 0;

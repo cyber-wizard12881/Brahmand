@@ -14,12 +14,21 @@
 
 using namespace std;
 
+//Backing Data Store for the Parallel Version of the Towers of Hanoi Puzzle
 class PHANOI_API PHanoi {
 public:
+	//Number of Disks
 	int N;
+
+	//The Disks stacked on each other for this Tower
 	queue<int>* Discs;
+	//Name of the Tower
 	string Tower;
+
+	//Default Constructor
 	PHanoi();
+	//The Destructor
 	~PHanoi();
+	//Overloaded actually invoked Constructor
 	PHanoi(int N, queue<int>* Discs, string Tower);
 };

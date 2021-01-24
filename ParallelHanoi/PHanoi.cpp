@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "PHanoi.h"
 
+//Default Constructor --> Initialize defaults here
 PHanoi::PHanoi()
 {
 	this->N = 0;
@@ -8,6 +9,7 @@ PHanoi::PHanoi()
 	this->Tower = "";
 }
 
+//The Destructor --> Clean up stuff at the end
 PHanoi::~PHanoi()
 {
 	this->N = 0;
@@ -16,6 +18,7 @@ PHanoi::~PHanoi()
 	this->Tower.clear();
 }
 
+//Constructor that is invoked --> Initialize the disks on the tower
 PHanoi::PHanoi(int N, queue<int>* Discs, string Tower)
 {
 	this->N = N;
