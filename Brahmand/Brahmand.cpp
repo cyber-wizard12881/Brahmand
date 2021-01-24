@@ -33,8 +33,8 @@ void ExecuteSerialHanoi()
     std::chrono::steady_clock::time_point start;
     std::chrono::steady_clock::time_point end;
 
-    start = std::chrono::steady_clock::now();
     SerialHanoi* sHanoi = new SerialHanoi(3);
+    start = std::chrono::steady_clock::now();
     sHanoi->move();
     end = std::chrono::steady_clock::now();
     cout << "Time to complete moves for Serial Hanoi is " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " microseconds." << endl;
@@ -57,8 +57,8 @@ void ExecuteParallelHanoi()
     //set the number of threads for execution in OpenMP
     omp_set_num_threads(NThreads);
 
-    start = std::chrono::steady_clock::now();
     ParallelHanoi* pHanoi = new ParallelHanoi(3);
+    start = std::chrono::steady_clock::now();
     pHanoi->move();
     end = std::chrono::steady_clock::now();
     cout << "Time to complete moves for Parallel Hanoi is " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " microseconds." << endl;
